@@ -44,3 +44,6 @@ You can also use the `INTERVAL` environment variable to control the number of se
  - Edit multiple records at once
  - Edit only one piece of data in a record with more than one piece
  - Support AAAA records
+
+## License
+MIT
