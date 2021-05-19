@@ -40,8 +40,9 @@ docker run --rm -e PROJECT_NAME=project-name-12345 -v /path/to/credentials.json:
 
 You can also use the `INTERVAL` environment variable to control the number of seconds between each update. The default is one day.
 
+`RECORD_NAME` can be a comma separated list of records to be updated.
+
 ## Future Improvements
- - Edit multiple records at once
  - Edit only one piece of data in a record with more than one piece
  - Support AAAA records
 

@@ -33,14 +33,16 @@ require 'net/http'
 
 loop do
   zone_name = ENV["ZONE_NAME"]
-  record_name = ENV["RECORD_NAME"]
+  record_names = ENV["RECORD_NAME"].split(",")
 
   zone = dns.zone zone_name
 
   ip_address = Net::HTTP.get(URI("https://checkip.amazonaws.com")).chomp
 
-  change = zone.modify record_name, "A" do |r|
-    r.data = [ip_address]
+  record_names.each do |record_name|
+    zone.modify record_name, "A" do |r|
+      r.data = [ip_address]
+    end
   end
 
 rescue StandardError => e
